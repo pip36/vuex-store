@@ -1,18 +1,29 @@
 <template>
   <div class="home">
-    <img src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Shopping Cart</h1>
+    <Cart/>
+    <h1>All Products</h1>
+    <ProductsFeed :products="allProducts"/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Cart from '@/components/Cart.vue'
+import ProductsFeed from '@/components/ProductsFeed.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    Cart,
+    ProductsFeed
+  },
+  computed: {
+    allProducts () {
+      return this.$store.state.products
+    }
+  },
+  created() {
+    this.$store.dispatch('SET_ALL_PRODUCTS')
   }
 }
 </script>
