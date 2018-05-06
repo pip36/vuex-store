@@ -3,7 +3,11 @@ import actions from './actions.js'
 
 const shopModule = {
     state: {
-        products: []
+        products: [],
+        availableCurrencies: [
+            'GBP',
+            'USD'
+        ]
     },
     mutations,
     actions

@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <user-preferences/>
     <h1>Shopping Cart</h1>
     <Cart/>
     <h1>All Products</h1>
@@ -10,12 +11,14 @@
 <script>
 import Cart from '@/components/Cart.vue'
 import ProductsFeed from '@/components/ProductsFeed.vue'
+import UserPreferences from '@/components/UserPreferences.vue'
 
 export default {
   name: 'home',
   components: {
     Cart,
-    ProductsFeed
+    ProductsFeed,
+    UserPreferences
   },
   computed: {
     allProducts () {
