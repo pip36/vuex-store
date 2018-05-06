@@ -12,9 +12,9 @@ export default {
   mixins: [currencyFormatter],
   computed: {
     orderTotal () {
-        return this.$store.state.cart.items
-                .map((item) => item.price * item.quantity)
-                .reduce((x,y) => x+y, 0)
+      return this.$store.state.cart.items
+        .map((item) => item.price * item.quantity)
+        .reduce((x,y) => x+y, 0)
     }
   }
 }

@@ -1,10 +1,10 @@
 export default {
     methods: {
-        toGBP: (n) => {
+        toGBP (n) {
             return `£${n.toFixed(2)}`
         },
 
-        toUSD: (n) => {
+        toUSD (n) {
             let exchangeRate = 1.32
             return `$${(n*exchangeRate).toFixed(2)}`
         },
@@ -15,9 +15,8 @@ export default {
                 'USD': this.toUSD
             }
 
-            if(!acceptedCurrencies[currency]) {
-                return 'NOT AN ACCEPTED CURRENCY'
-            }
+            if(!acceptedCurrencies[currency]) return 'NOT AN ACCEPTED CURRENCY'
+            
             return acceptedCurrencies[currency](n)
         }
     }
