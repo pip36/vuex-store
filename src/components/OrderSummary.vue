@@ -1,6 +1,6 @@
 <template>
   <div class="order-summmary">
-    <h2> Order Total: {{toCurrency(orderTotal, 'GBP')}} </h2>
+    <h2> Order Total: {{toCurrency(orderTotal, preferedCurrency)}} </h2>
   </div>
 </template>
 
@@ -15,6 +15,10 @@ export default {
       return this.$store.state.cart.items
         .map((item) => item.price * item.quantity)
         .reduce((x,y) => x+y, 0)
+    },
+
+    preferedCurrency () {
+      return this.$store.state.user.preferences.currency
     }
   }
 }
