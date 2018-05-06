@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     allProducts () {
-      return this.$store.state.products
+      return this.$store.state.shop.products
     }
   },
   created() {
